@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuranAyas</string>
+    <string name="saved_aya_value">Aya Value</string>
+    <string name="saved_sora_value">Sora Value</string>
 </resources>

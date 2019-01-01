@@ -1,6 +1,7 @@
 package com.alqalamsoftware.quranayas;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ public class ImageZoomActivity extends AppCompatActivity {
 
 
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         int aya = intent.getIntExtra(MainActivity.AYA_MESSAGE, 1);
         int sora = intent.getIntExtra(MainActivity.SORA_MESSAGE, 0);
 
@@ -36,10 +37,32 @@ public class ImageZoomActivity extends AppCompatActivity {
         ayaImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                setResult(RESULT_CANCELED);
                 finish();
+
             }
         });
 
+        ImageView prevImg = findViewById(R.id.prev_zoom);
+        ImageView nextImg = findViewById(R.id.next_zoom);
+         prevImg.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 intent.setData(Uri.parse("prev"));
+                 setResult(RESULT_OK, intent);
+                 finish();
+             }
+         });
+
+        nextImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.setData(Uri.parse("next"));
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
     }
 
     private void adjustImage(int aya, int sora)

@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
     <TextView
@@ -27,19 +27,36 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1.0"
             android:id="@+id/ayaImg"
             android:paddingHorizontal="10dp"
-            android:src="@drawable/a2_282"/>
+            android:src="@drawable/a2_283"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:text="Hossam" />
+            android:orientation="horizontal"
+            android:weightSum="4"
+            >
+        <ImageView
+            android:id="@+id/next_zoom"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_action_next" />
 
+        <ImageView
+            android:id="@+id/prev_zoom"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.0"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_action_prev" />
+        </LinearLayout>
     </LinearLayout>
+
 
 
     </LinearLayout>
